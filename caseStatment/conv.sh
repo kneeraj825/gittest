@@ -15,7 +15,7 @@ num=`echo "scale=2; $num1/12" |bc`
 echo "$num feet"
 ;;
 3)
-num=`echo "scale=2; $num1*0.3" |bc`
+num=`echo "scale=2; $num1*3/10" |bc`
 echo " $num meter"
 ;;
 4)
