@@ -7,18 +7,17 @@ do
 done
 echo ${a[@]}
 echo "length of the array is:" ${#a[@]}
-min=$((a[0]))
-secmin=$((a[0]))
-		for(( i=0; i<10; i++ ))
+temp=0
+	for (( i=0; i<10; i++ ))
+	do
+		for(( j=i+1; j<10; j++ ))
 		do
-		if (( $((a[i])) < $min ))
+		if (( $((a[i])) >  $((a[j]))  ))
 		then
-		secmin=$min
-		min=$((a[i]))
-		elif (( $((a[i])) < $secmin )) 
-		then
-		secmin=$((a[i]))
+		temp=$((a[i]))
+		a[i]=$((a[j]))
+		a[j]=$temp
 		fi
 done
-echo " smallest  number :" $min
-echo "second smallest number :" $secmin
+echo ${a[i]}
+done
